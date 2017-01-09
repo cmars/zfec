@@ -1,0 +1,26 @@
+name: zfec
+version: '1.4.24'
+summary: an efficient, portable erasure coding tool
+description: |
+  Generate redundant blocks of information such that if some of the blocks are
+  lost then the original data can be recovered from the remaining blocks.
+
+grade: stable
+confinement: strict
+
+apps:
+  zfec:
+    command: bin/zfec
+    plugs:
+      - home
+  zunfec:
+    command: bin/zunfec
+    plugs:
+      - home
+
+parts:
+  zfec:
+    plugin: python
+    python-packages:
+      - zfec
+    python-version: python2
